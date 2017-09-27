@@ -21,3 +21,4 @@ E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKi
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.csproj.GenerateResource.Cache
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.dll
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.pdb
+E:\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.RibbonOOT.resources

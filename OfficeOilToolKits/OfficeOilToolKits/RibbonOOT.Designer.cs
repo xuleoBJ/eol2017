@@ -1,13 +1,13 @@
 ﻿namespace OfficeOilToolKits
 {
-    partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class RibbonOOT : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public Ribbon1()
+        public RibbonOOT()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -42,9 +42,13 @@
             this.group3 = this.Factory.CreateRibbonGroup();
             this.group4 = this.Factory.CreateRibbonGroup();
             this.group5 = this.Factory.CreateRibbonGroup();
+            this.group6 = this.Factory.CreateRibbonGroup();
+            this.group7 = this.Factory.CreateRibbonGroup();
+            this.btnGeoTimes = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
+            this.group7.SuspendLayout();
             // 
             // tab1
             // 
@@ -54,6 +58,8 @@
             this.tab1.Groups.Add(this.group3);
             this.tab1.Groups.Add(this.group4);
             this.tab1.Groups.Add(this.group5);
+            this.tab1.Groups.Add(this.group6);
+            this.tab1.Groups.Add(this.group7);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -95,9 +101,25 @@
             this.group5.Label = "剖面";
             this.group5.Name = "group5";
             // 
-            // Ribbon1
+            // group6
             // 
-            this.Name = "Ribbon1";
+            this.group6.Label = "表格和数据";
+            this.group6.Name = "group6";
+            // 
+            // group7
+            // 
+            this.group7.Items.Add(this.btnGeoTimes);
+            this.group7.Label = "其它";
+            this.group7.Name = "group7";
+            // 
+            // btnGeoTimes
+            // 
+            this.btnGeoTimes.Label = "地质年代表";
+            this.btnGeoTimes.Name = "btnGeoTimes";
+            // 
+            // RibbonOOT
+            // 
+            this.Name = "RibbonOOT";
             this.RibbonType = "Microsoft.Excel.Workbook";
             this.Tabs.Add(this.tab1);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
@@ -107,6 +129,8 @@
             this.group1.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
+            this.group7.ResumeLayout(false);
+            this.group7.PerformLayout();
 
         }
 
@@ -120,13 +144,16 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group4;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group5;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group6;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group7;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGeoTimes;
     }
 
     partial class ThisRibbonCollection
     {
-        internal Ribbon1 Ribbon1
+        internal RibbonOOT Ribbon1
         {
-            get { return this.GetRibbon<Ribbon1>(); }
+            get { return this.GetRibbon<RibbonOOT>(); }
         }
     }
 }

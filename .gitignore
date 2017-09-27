@@ -4,6 +4,23 @@ ehthumbs.db
 
 # Folder config file
 Desktop.ini
+#xuleo filters
+*.swp
+*.pyc
+*.pdb
+*.exe
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+bld/
+[Bb]in/
+[Oo]bj/
+
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/

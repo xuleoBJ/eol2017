@@ -10,7 +10,7 @@ using System.Drawing;
 
 namespace OfficeOilToolKits
 {
-    public partial class Ribbon1
+    public partial class RibbonOOT
     {
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
