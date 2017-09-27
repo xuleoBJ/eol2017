@@ -1,0 +1,11 @@
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\OfficeOilToolKits.dll
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\OfficeOilToolKits.pdb
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\OfficeOilToolKits.dll.manifest
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\OfficeOilToolKits.vsto
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.dll
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.csprojResolveAssemblyReference.cache
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.Properties.Resources.resources
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.csproj.GenerateResource.Cache
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.dll
+E:\EOL2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.pdb
