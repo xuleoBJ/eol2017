@@ -45,9 +45,13 @@
             this.group6 = this.Factory.CreateRibbonGroup();
             this.group7 = this.Factory.CreateRibbonGroup();
             this.btnGeoTimes = this.Factory.CreateRibbonButton();
+            this.btnChinaProvince = this.Factory.CreateRibbonButton();
+            this.btnWellPosition = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
+            this.group3.SuspendLayout();
+            this.group4.SuspendLayout();
             this.group7.SuspendLayout();
             // 
             // tab1
@@ -88,11 +92,13 @@
             // 
             // group3
             // 
+            this.group3.Items.Add(this.btnChinaProvince);
             this.group3.Label = "中国区域图";
             this.group3.Name = "group3";
             // 
             // group4
             // 
+            this.group4.Items.Add(this.btnWellPosition);
             this.group4.Label = "小层平面";
             this.group4.Name = "group4";
             // 
@@ -117,6 +123,18 @@
             this.btnGeoTimes.Label = "地质年代表";
             this.btnGeoTimes.Name = "btnGeoTimes";
             // 
+            // btnChinaProvince
+            // 
+            this.btnChinaProvince.Label = "中国地图";
+            this.btnChinaProvince.Name = "btnChinaProvince";
+            this.btnChinaProvince.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnChinaProvince_Click);
+            // 
+            // btnWellPosition
+            // 
+            this.btnWellPosition.Label = "井位图";
+            this.btnWellPosition.Name = "btnWellPosition";
+            this.btnWellPosition.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWellPosition_Click);
+            // 
             // RibbonOOT
             // 
             this.Name = "RibbonOOT";
@@ -129,6 +147,10 @@
             this.group1.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
+            this.group3.ResumeLayout(false);
+            this.group3.PerformLayout();
+            this.group4.ResumeLayout(false);
+            this.group4.PerformLayout();
             this.group7.ResumeLayout(false);
             this.group7.PerformLayout();
 
@@ -147,6 +169,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group6;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group7;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGeoTimes;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnChinaProvince;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnWellPosition;
     }
 
     partial class ThisRibbonCollection

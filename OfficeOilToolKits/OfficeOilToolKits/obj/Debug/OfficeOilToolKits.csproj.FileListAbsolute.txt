@@ -17,8 +17,9 @@ E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\Microsoft.Offic
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\bin\Debug\Microsoft.Office.Tools.Common.v4.0.Utilities.xml
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.csprojResolveAssemblyReference.cache
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.Properties.Resources.resources
-E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.Ribbon1.resources
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.csproj.GenerateResource.Cache
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.dll
 E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.pdb
 E:\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.RibbonOOT.resources
+E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.RibbonOOT.resources
+E:\EOL2017\eol2017\OfficeOilToolKits\OfficeOilToolKits\obj\Debug\OfficeOilToolKits.FormWeb.resources
