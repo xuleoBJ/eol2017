@@ -215,7 +215,6 @@ namespace OfficeOilToolKits.svg
         public void addPath(string d)
         {
             XmlElement elePath = svgDoc.CreateElement("path");
-            elePath.SetAttribute("id", "idTitle");
             elePath.SetAttribute("style", "fill:white;stroke:red;stroke-width:1");
             elePath.SetAttribute("d", d);
             svgRoot.AppendChild(elePath);
@@ -223,14 +222,11 @@ namespace OfficeOilToolKits.svg
 
         public void addPath(string  idstr,string d)
         {
-            XmlElement svgTitle = svgDoc.CreateElement("path");
-            svgTitle.SetAttribute("id", idstr);
-            //svgTitle.SetAttribute("x", ix.ToString());
-            //svgTitle.SetAttribute("y", iy.ToString());
-            //svgTitle.SetAttribute("font-size", "10pt");
-            //svgTitle.SetAttribute("fill", "red");
-            //svgTitle.InnerText = sTitle;
-            //svgRoot.AppendChild(svgTitle);
+            XmlElement elePath = svgDoc.CreateElement("path");
+            elePath.SetAttribute("id", idstr);
+            elePath.SetAttribute("style", "fill:white;stroke:red;stroke-width:1");
+            elePath.SetAttribute("d", d);
+            svgRoot.AppendChild(elePath);
         }
 
         public void makeSVGfile(string filePath)

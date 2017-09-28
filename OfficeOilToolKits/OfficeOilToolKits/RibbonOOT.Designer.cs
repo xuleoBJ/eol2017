@@ -40,29 +40,32 @@
             this.group2 = this.Factory.CreateRibbonGroup();
             this.btnInsertColumns = this.Factory.CreateRibbonButton();
             this.group3 = this.Factory.CreateRibbonGroup();
+            this.btnChinaProvince = this.Factory.CreateRibbonButton();
             this.group4 = this.Factory.CreateRibbonGroup();
+            this.btnWellPosition = this.Factory.CreateRibbonButton();
             this.group5 = this.Factory.CreateRibbonGroup();
             this.group6 = this.Factory.CreateRibbonGroup();
             this.group7 = this.Factory.CreateRibbonGroup();
             this.btnGeoTimes = this.Factory.CreateRibbonButton();
-            this.btnChinaProvince = this.Factory.CreateRibbonButton();
-            this.btnWellPosition = this.Factory.CreateRibbonButton();
+            this.btnCheckDepth = this.Factory.CreateRibbonButton();
+            this.btnDepth2Layer = this.Factory.CreateRibbonButton();
+            this.button1 = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
-            this.group2.SuspendLayout();
             this.group3.SuspendLayout();
             this.group4.SuspendLayout();
+            this.group6.SuspendLayout();
             this.group7.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
-            this.tab1.Groups.Add(this.group2);
-            this.tab1.Groups.Add(this.group3);
+            this.tab1.Groups.Add(this.group6);
             this.tab1.Groups.Add(this.group4);
             this.tab1.Groups.Add(this.group5);
-            this.tab1.Groups.Add(this.group6);
+            this.tab1.Groups.Add(this.group3);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Groups.Add(this.group7);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
@@ -70,7 +73,8 @@
             // group1
             // 
             this.group1.Items.Add(this.btnInsertRows);
-            this.group1.Label = "行";
+            this.group1.Items.Add(this.btnInsertColumns);
+            this.group1.Label = "行列快捷处理";
             this.group1.Name = "group1";
             // 
             // btnInsertRows
@@ -81,8 +85,7 @@
             // 
             // group2
             // 
-            this.group2.Items.Add(this.btnInsertColumns);
-            this.group2.Label = "列";
+            this.group2.Label = "网络";
             this.group2.Name = "group2";
             // 
             // btnInsertColumns
@@ -93,8 +96,14 @@
             // group3
             // 
             this.group3.Items.Add(this.btnChinaProvince);
-            this.group3.Label = "中国区域图";
+            this.group3.Label = "区域管理分析";
             this.group3.Name = "group3";
+            // 
+            // btnChinaProvince
+            // 
+            this.btnChinaProvince.Label = "中国地图";
+            this.btnChinaProvince.Name = "btnChinaProvince";
+            this.btnChinaProvince.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnChinaProvince_Click);
             // 
             // group4
             // 
@@ -102,14 +111,23 @@
             this.group4.Label = "小层平面";
             this.group4.Name = "group4";
             // 
+            // btnWellPosition
+            // 
+            this.btnWellPosition.Label = "井位图";
+            this.btnWellPosition.Name = "btnWellPosition";
+            this.btnWellPosition.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWellPosition_Click);
+            // 
             // group5
             // 
-            this.group5.Label = "剖面";
+            this.group5.Label = "剖面分析";
             this.group5.Name = "group5";
             // 
             // group6
             // 
-            this.group6.Label = "表格和数据";
+            this.group6.Items.Add(this.btnCheckDepth);
+            this.group6.Items.Add(this.btnDepth2Layer);
+            this.group6.Items.Add(this.button1);
+            this.group6.Label = "数据统计及绘图";
             this.group6.Name = "group6";
             // 
             // group7
@@ -123,17 +141,20 @@
             this.btnGeoTimes.Label = "地质年代表";
             this.btnGeoTimes.Name = "btnGeoTimes";
             // 
-            // btnChinaProvince
+            // btnCheckDepth
             // 
-            this.btnChinaProvince.Label = "中国地图";
-            this.btnChinaProvince.Name = "btnChinaProvince";
-            this.btnChinaProvince.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnChinaProvince_Click);
+            this.btnCheckDepth.Label = "顶底深校验";
+            this.btnCheckDepth.Name = "btnCheckDepth";
             // 
-            // btnWellPosition
+            // btnDepth2Layer
             // 
-            this.btnWellPosition.Label = "井位图";
-            this.btnWellPosition.Name = "btnWellPosition";
-            this.btnWellPosition.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnWellPosition_Click);
+            this.btnDepth2Layer.Label = "深度归小层";
+            this.btnDepth2Layer.Name = "btnDepth2Layer";
+            // 
+            // button1
+            // 
+            this.button1.Label = "孔隙度频率直方图";
+            this.button1.Name = "button1";
             // 
             // RibbonOOT
             // 
@@ -145,12 +166,12 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
-            this.group2.ResumeLayout(false);
-            this.group2.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
             this.group4.ResumeLayout(false);
             this.group4.PerformLayout();
+            this.group6.ResumeLayout(false);
+            this.group6.PerformLayout();
             this.group7.ResumeLayout(false);
             this.group7.PerformLayout();
 
@@ -171,6 +192,9 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGeoTimes;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnChinaProvince;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnWellPosition;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnCheckDepth;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDepth2Layer;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
     }
 
     partial class ThisRibbonCollection

@@ -9,6 +9,7 @@ using Microsoft.Office.Tools.Excel;
 using System.Drawing;
 using OfficeOilToolKits.svg;
 using System.IO;
+using Newtonsoft.Json;
 
 
 namespace OfficeOilToolKits
@@ -33,12 +34,16 @@ namespace OfficeOilToolKits
 
         private void btnChinaProvince_Click(object sender, RibbonControlEventArgs e)
         {
-            string fPath= @"E:\EOL2017\eol2017\pythonScript\d.txt";
+            string fPath = @"E:\eol2017\pythonScript\data.json";
             StreamReader sr = new StreamReader(fPath, Encoding.Default);
-            string d = sr.ReadToEnd();
+            string jsonText = sr.ReadToEnd();
             sr.Close();
+            Dictionary<string, string> jo = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonText);
             cSVG svgChinaMap = new cSVG();
-            svgChinaMap.addPath(d);
+            foreach (var item in jo)
+            {
+                svgChinaMap.addPath(item.Key, item.Value);
+            }
             string fileName = "d:\\123.svg";
             svgChinaMap.makeSVGfile(fileName);
             FormWeb newForm = new FormWeb();
