@@ -214,17 +214,21 @@ namespace OfficeOilToolKits.svg
 
         public void addPath(string d)
         {
-            XmlElement elePath = svgDoc.CreateElement("path");
-            elePath.SetAttribute("style", "fill:white;stroke:red;stroke-width:1");
-            elePath.SetAttribute("d", d);
-            svgRoot.AppendChild(elePath);
+            addPath("", d);
         }
 
         public void addPath(string  idstr,string d)
         {
+            addPath(idstr, d, "white");
+        }
+
+        public void addPath(string idstr, string d,string fillCollor)
+        {
             XmlElement elePath = svgDoc.CreateElement("path");
             elePath.SetAttribute("id", idstr);
-            elePath.SetAttribute("style", "fill:white;stroke:red;stroke-width:1");
+            elePath.SetAttribute("stroke-width", "0.5");
+            elePath.SetAttribute("stroke", "#b3b3b3");
+            elePath.SetAttribute("fill", fillCollor);
             elePath.SetAttribute("d", d);
             svgRoot.AppendChild(elePath);
         }

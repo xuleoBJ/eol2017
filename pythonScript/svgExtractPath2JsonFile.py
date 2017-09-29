@@ -2,7 +2,7 @@ from xml.dom import minidom
 import json
 
 config = {
-  'svg_file' : 'map//chinaXL.svg',
+  'svg_file' : 'map//chinaXL2.svg',
   'js_file'  : 'map.js',
   'js_var'   : 'svgMap'
 }

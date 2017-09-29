@@ -1,0 +1,4 @@
+digraph drawHistom
+{
+ selectData->copy_SelectData_to_NewSheet->sorted->calFrequence->drawPic;
+}

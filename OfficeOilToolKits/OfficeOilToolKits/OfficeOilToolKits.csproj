@@ -180,6 +180,7 @@
   -->
   <ItemGroup>
     <Compile Include="cIDmake.cs" />
+    <Compile Include="cPublicMethod.cs" />
     <Compile Include="FormWeb.cs">
       <SubType>Form</SubType>
     </Compile>
