@@ -90,6 +90,7 @@
             // 
             this.btnInsertColumns.Label = "插入多列";
             this.btnInsertColumns.Name = "btnInsertColumns";
+            this.btnInsertColumns.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertColumns_Click);
             // 
             // group6
             // 

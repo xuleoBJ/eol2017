@@ -108,5 +108,19 @@ namespace OfficeOilToolKits
             }
             //
         }
+
+        private void btnInsertColumns_Click(object sender, RibbonControlEventArgs e)
+        {
+            Excel.Application app = Globals.ThisAddIn.Application;
+            app.Goto("R3C3", System.Type.Missing);
+
+            Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
+            Excel.Worksheet curSheet = wb.Worksheets.get_Item(2);
+            MessageBox.Show(curSheet.Name);
+            curSheet.Cells[1,2].Value="A1";
+            Excel.WorksheetFunction func = Globals.ThisAddIn.Application.WorksheetFunction;
+            double result1 = func.Asin(1);
+            MessageBox.Show(result1.ToString());
+        }
     }
 }

@@ -18,17 +18,10 @@ namespace OfficeOilToolKits
         public static bool IsExsitSheet(Excel.Workbook  wb,  string strSheetName)
         {
             // Keeping track
-            bool found = false;
             // Loop through all worksheets in the workbook
             foreach (Excel.Worksheet sheet in wb.Sheets)
-            {
-                // Check the name of the current sheet
-                if (sheet.Name == strSheetName)
-                {
-                    found = true;
-                    return true;
-                }
-            }
+                if (sheet.Name == strSheetName) return true; // Check the name of the current sheet
+               
             return false;
         }
 
