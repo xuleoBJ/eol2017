@@ -1,0 +1,20 @@
+digraph developedGeology
+{
+
+edge [fontname="FangSong"];
+
+node [shape=box, fontname="Aral" size="20,20"];
+
+{
+	分层->砂体形态分布描述;
+	形态描述->构造;
+	形态描述->厚度;
+	形态描述->分布;
+}
+
+{
+    图形数字化;
+	数字图形化;
+}
+  
+}

@@ -52,12 +52,14 @@
             this.group7 = this.Factory.CreateRibbonGroup();
             this.btnGeoTimes = this.Factory.CreateRibbonButton();
             this.btnVolSedi = this.Factory.CreateRibbonButton();
+            this.btnDigger = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group6.SuspendLayout();
             this.group4.SuspendLayout();
             this.group5.SuspendLayout();
             this.group3.SuspendLayout();
+            this.group2.SuspendLayout();
             this.group7.SuspendLayout();
             // 
             // tab1
@@ -79,6 +81,7 @@
             this.group1.Items.Add(this.btnInsertColumns);
             this.group1.Label = "行列快捷处理";
             this.group1.Name = "group1";
+            this.group1.Visible = false;
             // 
             // btnInsertRows
             // 
@@ -153,7 +156,8 @@
             // 
             // group2
             // 
-            this.group2.Label = "网络";
+            this.group2.Items.Add(this.btnDigger);
+            this.group2.Label = "图形数字化";
             this.group2.Name = "group2";
             // 
             // group7
@@ -174,6 +178,11 @@
             this.btnVolSedi.Name = "btnVolSedi";
             this.btnVolSedi.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnVolSedi_Click);
             // 
+            // btnDigger
+            // 
+            this.btnDigger.Label = "图形数字化";
+            this.btnDigger.Name = "btnDigger";
+            // 
             // RibbonOOT
             // 
             this.Name = "RibbonOOT";
@@ -192,6 +201,8 @@
             this.group5.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
             this.group7.ResumeLayout(false);
             this.group7.PerformLayout();
 
@@ -217,6 +228,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnVolSedi;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDrawLog;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDigger;
     }
 
     partial class ThisRibbonCollection
