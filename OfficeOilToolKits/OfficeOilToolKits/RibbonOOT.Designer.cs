@@ -35,9 +35,6 @@
         private void InitializeComponent()
         {
             this.tab1 = this.Factory.CreateRibbonTab();
-            this.group1 = this.Factory.CreateRibbonGroup();
-            this.btnInsertRows = this.Factory.CreateRibbonButton();
-            this.btnInsertColumns = this.Factory.CreateRibbonButton();
             this.group6 = this.Factory.CreateRibbonGroup();
             this.btnCheckDepth = this.Factory.CreateRibbonButton();
             this.btnDepth2Layer = this.Factory.CreateRibbonButton();
@@ -48,52 +45,39 @@
             this.btnDrawLog = this.Factory.CreateRibbonButton();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.btnChinaProvince = this.Factory.CreateRibbonButton();
+            this.group1 = this.Factory.CreateRibbonGroup();
+            this.btnGetIP = this.Factory.CreateRibbonButton();
+            this.btnIP = this.Factory.CreateRibbonButton();
+            this.group8 = this.Factory.CreateRibbonGroup();
+            this.btnWorkBookIE = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
+            this.btnDigger = this.Factory.CreateRibbonButton();
             this.group7 = this.Factory.CreateRibbonGroup();
             this.btnGeoTimes = this.Factory.CreateRibbonButton();
             this.btnVolSedi = this.Factory.CreateRibbonButton();
-            this.btnDigger = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
-            this.group1.SuspendLayout();
             this.group6.SuspendLayout();
             this.group4.SuspendLayout();
             this.group5.SuspendLayout();
             this.group3.SuspendLayout();
+            this.group1.SuspendLayout();
+            this.group8.SuspendLayout();
             this.group2.SuspendLayout();
             this.group7.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
-            this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.group6);
             this.tab1.Groups.Add(this.group4);
             this.tab1.Groups.Add(this.group5);
             this.tab1.Groups.Add(this.group3);
+            this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group8);
             this.tab1.Groups.Add(this.group2);
             this.tab1.Groups.Add(this.group7);
             this.tab1.Label = "石油工具包";
             this.tab1.Name = "tab1";
-            // 
-            // group1
-            // 
-            this.group1.Items.Add(this.btnInsertRows);
-            this.group1.Items.Add(this.btnInsertColumns);
-            this.group1.Label = "行列快捷处理";
-            this.group1.Name = "group1";
-            this.group1.Visible = false;
-            // 
-            // btnInsertRows
-            // 
-            this.btnInsertRows.Label = "插入多行";
-            this.btnInsertRows.Name = "btnInsertRows";
-            this.btnInsertRows.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertLine_Click);
-            // 
-            // btnInsertColumns
-            // 
-            this.btnInsertColumns.Label = "插入多列";
-            this.btnInsertColumns.Name = "btnInsertColumns";
-            this.btnInsertColumns.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnInsertColumns_Click);
             // 
             // group6
             // 
@@ -154,11 +138,47 @@
             this.btnChinaProvince.Name = "btnChinaProvince";
             this.btnChinaProvince.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnChinaProvince_Click);
             // 
+            // group1
+            // 
+            this.group1.Items.Add(this.btnGetIP);
+            this.group1.Items.Add(this.btnIP);
+            this.group1.Label = "网络";
+            this.group1.Name = "group1";
+            // 
+            // btnGetIP
+            // 
+            this.btnGetIP.Label = "查看本机IP";
+            this.btnGetIP.Name = "btnGetIP";
+            this.btnGetIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnGetIP_Click);
+            // 
+            // btnIP
+            // 
+            this.btnIP.Label = "IP地址配置";
+            this.btnIP.Name = "btnIP";
+            this.btnIP.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnbtnIP_Click);
+            // 
+            // group8
+            // 
+            this.group8.Items.Add(this.btnWorkBookIE);
+            this.group8.Label = "便捷操作";
+            this.group8.Name = "group8";
+            // 
+            // btnWorkBookIE
+            // 
+            this.btnWorkBookIE.Label = "sheet选择";
+            this.btnWorkBookIE.Name = "btnWorkBookIE";
+            this.btnWorkBookIE.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnExploreSheet_Click);
+            // 
             // group2
             // 
             this.group2.Items.Add(this.btnDigger);
             this.group2.Label = "图形数字化";
             this.group2.Name = "group2";
+            // 
+            // btnDigger
+            // 
+            this.btnDigger.Label = "图形数字化";
+            this.btnDigger.Name = "btnDigger";
             // 
             // group7
             // 
@@ -178,11 +198,6 @@
             this.btnVolSedi.Name = "btnVolSedi";
             this.btnVolSedi.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.btnVolSedi_Click);
             // 
-            // btnDigger
-            // 
-            this.btnDigger.Label = "图形数字化";
-            this.btnDigger.Name = "btnDigger";
-            // 
             // RibbonOOT
             // 
             this.Name = "RibbonOOT";
@@ -191,8 +206,6 @@
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
             this.tab1.ResumeLayout(false);
             this.tab1.PerformLayout();
-            this.group1.ResumeLayout(false);
-            this.group1.PerformLayout();
             this.group6.ResumeLayout(false);
             this.group6.PerformLayout();
             this.group4.ResumeLayout(false);
@@ -201,6 +214,10 @@
             this.group5.PerformLayout();
             this.group3.ResumeLayout(false);
             this.group3.PerformLayout();
+            this.group1.ResumeLayout(false);
+            this.group1.PerformLayout();
+            this.group8.ResumeLayout(false);
+            this.group8.PerformLayout();
             this.group2.ResumeLayout(false);
             this.group2.PerformLayout();
             this.group7.ResumeLayout(false);
@@ -212,9 +229,9 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab tab1;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group1;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInsertRows;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnIP;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnInsertColumns;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnWorkBookIE;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group3;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group4;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group5;
@@ -229,6 +246,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnVolSedi;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDrawLog;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton btnDigger;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton btnGetIP;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group8;
     }
 
     partial class ThisRibbonCollection

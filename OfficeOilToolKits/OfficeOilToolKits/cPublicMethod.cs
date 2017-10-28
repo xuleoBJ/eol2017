@@ -6,24 +6,14 @@ using System.IO;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Xml;
-using Excel = Microsoft.Office.Interop.Excel;
-using Office = Microsoft.Office.Core;
-using Microsoft.Office.Tools.Excel;
+
 
 namespace OfficeOilToolKits
 {
     class cPublicMethod
     {
 
-        public static bool IsExsitSheet(Excel.Workbook  wb,  string strSheetName)
-        {
-            // Keeping track
-            // Loop through all worksheets in the workbook
-            foreach (Excel.Worksheet sheet in wb.Sheets)
-                if (sheet.Name == strSheetName) return true; // Check the name of the current sheet
-               
-            return false;
-        }
+    
 
 
         public static TimeSpan ExecDateDiff(DateTime dateBegin, DateTime dateEnd)
@@ -59,10 +49,6 @@ namespace OfficeOilToolKits
             }
             return fUnitPxScale;
         }
-
-      
-
-     
 
         public static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
         {
@@ -127,12 +113,14 @@ namespace OfficeOilToolKits
             foreach (string word in ltSplit) ltStrRet.AddRange(splitText2ListCharByLength(word, iWidth, font));
             return ltStrRet;
         }
+
         public static string getYMLastMonth(string sYYYYMM)
         {
             int iYM = int.Parse(sYYYYMM);
             if (iYM % 100 > 1) return (iYM - 1).ToString(); //不是一月份
             else return (iYM / 100 - 1).ToString() + "12";
         }
+
         private void LoadTreeViewFromXmlFile(string filename, TreeView trv)
         {
             // Load the XML document.
@@ -143,7 +131,6 @@ namespace OfficeOilToolKits
             AddTreeViewChildNodes(trv.Nodes, xml_doc.DocumentElement);
             trv.CollapseAll();
         }
-
 
         private void AddTreeNode(XmlNode xmlNode, TreeNode treeNode)
         {
@@ -180,7 +167,6 @@ namespace OfficeOilToolKits
             }
         }
 
-
         public static string getRGB(Color m_color)
         {
             string r = m_color.R.ToString();
@@ -198,6 +184,7 @@ namespace OfficeOilToolKits
         /// </summary>
         /// <param name="col"></param>
         /// <returns></returns>
+        /// 
         public static bool isValidColor(string col)
         {
             return col.StartsWith("#") & (col.Length == 7 | col.Length == 4) & col.Substring(1).All(c => "ABCDEF0123456789".IndexOf(Char.ToUpper(c)) != -1);
@@ -216,10 +203,6 @@ namespace OfficeOilToolKits
         {
             return Convert.ToInt16(Math.Ceiling(fValue) / iInteval + 1) * iInteval;
         }
-
-
-       
-
       
     }
 }

@@ -11,6 +11,7 @@ using OfficeOilToolKits.svg;
 using System.IO;
 using Newtonsoft.Json;
 using System.Windows.Forms ;
+using System.Diagnostics;
 
 
 namespace OfficeOilToolKits
@@ -20,17 +21,6 @@ namespace OfficeOilToolKits
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
 
-        }
-
-        private void btnInsertLine_Click(object sender, RibbonControlEventArgs e)
-        {
-            Excel.Range rng = Globals.ThisAddIn.Application.ActiveCell;
-            rng = (Excel.Range)rng.Cells[rng.Rows.Count, 1];
-
-            rng = rng.EntireRow;
-            //当前设置插入5行
-            for (int i = 0; i < 5; i++)
-                rng.Insert(Excel.XlInsertShiftDirection.xlShiftDown);
         }
 
         private void btnChinaProvince_Click(object sender, RibbonControlEventArgs e)
@@ -91,7 +81,7 @@ namespace OfficeOilToolKits
             curSheet.Columns.AutoFit();
 
             string sheetName = "静止清水中沉积物沉降速度";
-            if (cPublicMethod.IsExsitSheet(wb, sheetName) == false) curSheet.Name = sheetName;
+            if (cPublicMethondExcel.IsExsitSheet(wb, sheetName) == false) curSheet.Name = sheetName;
             else MessageBox.Show("当前表单名已存在");
         }
 
@@ -100,27 +90,70 @@ namespace OfficeOilToolKits
             Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
             Excel.Worksheet curSheet = Globals.ThisAddIn.Application.ActiveSheet;
             //read data
-            List<double> ltValue = new List<double>();
-            for (int i = 1; i < 100; i++) 
+            string dataText = "D:\\GitHub\\test123.txt ";
+            List<string> dataline = cIOBase.readText2StringList(dataText,1);
+
+            Microsoft.Office.Interop.Excel.Shape shp = curSheet.Shapes.AddShape(Microsoft.Office.Core.MsoAutoShapeType.msoShapeRectangle, 30, 100, 300, 100);
+            shp.Name = "Shape1";
+            shp.TextFrame2.TextRange.Font.Fill.ForeColor.RGB = System.Drawing.Color.Gray.ToArgb();
+            shp.Fill.ForeColor.RGB = System.Drawing.Color.White.ToArgb();
+            shp.TextEffect.Text = "text123";
+            int iLine = dataline.Count;
+            Single[,] myPoints = new Single[iLine, 2];
+            iLine = 200;
+            for (int i = 0; i < iLine; i++)
             {
-                double _value = Convert.ToDouble(curSheet.Cells[i, 1].Value);
-                ltValue.Add(_value);
+                //判断excel单元格值能否转为数字，不能转，删
+                string[] dataValue = dataline[i].Split();
+                myPoints[iLine, 0] = Convert.ToSingle(dataValue[1])*10;
+                myPoints[iLine, 1] = Convert.ToSingle(dataValue[0]);
             }
-            //
+            object po = myPoints;
+            curSheet.Shapes.AddPolyline(po);
         }
 
         private void btnInsertColumns_Click(object sender, RibbonControlEventArgs e)
         {
-            Excel.Application app = Globals.ThisAddIn.Application;
-            app.Goto("R3C3", System.Type.Missing);
 
-            Excel.Workbook wb = Globals.ThisAddIn.Application.ActiveWorkbook;
-            Excel.Worksheet curSheet = wb.Worksheets.get_Item(2);
-            MessageBox.Show(curSheet.Name);
-            curSheet.Cells[1,2].Value="A1";
-            Excel.WorksheetFunction func = Globals.ThisAddIn.Application.WorksheetFunction;
-            double result1 = func.Asin(1);
-            MessageBox.Show(result1.ToString());
+        }
+
+        private void btnbtnIP_Click(object sender, RibbonControlEventArgs e)
+        {
+            FormIP newForm = new FormIP();
+            newForm.ShowDialog();
+        }
+
+        private void btnExploreSheet_Click(object sender, RibbonControlEventArgs e)
+        {
+            FormExplorSheet newForm = new FormExplorSheet();
+            newForm.Show();
+        }
+
+        private void btnGetIP_Click(object sender, RibbonControlEventArgs e)
+        {
+            
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "ipconfig.exe";//设置程序名     
+            cmd.StartInfo.Arguments = "/all";  //参数     
+            //重定向标准输出     
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.StartInfo.CreateNoWindow = true;//不显示窗口（控制台程序是黑屏）     
+            //cmd.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;//暂时不明白什么意思     
+            /*  
+     收集一下 有备无患  
+            关于:ProcessWindowStyle.Hidden隐藏后如何再显示？  
+            hwndWin32Host = Win32Native.FindWindow(null, win32Exinfo.windowsName);  
+            Win32Native.ShowWindow(hwndWin32Host, 1);     //先FindWindow找到窗口后再ShowWindow  
+            */
+            cmd.Start();
+            string info = cmd.StandardOutput.ReadToEnd();
+            cmd.WaitForExit();
+            cmd.Close();
+            string infoPath = "当前机器IP.txt";
+            File.WriteAllText(infoPath, info);
+            System.Diagnostics.Process.Start(infoPath);
         }
     }
 }

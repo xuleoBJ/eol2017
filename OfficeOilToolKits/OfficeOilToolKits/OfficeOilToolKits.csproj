@@ -136,6 +136,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -179,19 +180,65 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="ApplySettingDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplySettingDialog.Designer.cs">
+      <DependentUpon>ApplySettingDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="cIDmake.cs" />
+    <Compile Include="cIOBase.cs" />
+    <Compile Include="ClassValueCheck.cs" />
+    <Compile Include="ConfigurationHelper.cs" />
     <Compile Include="cPublicMethod.cs" />
+    <Compile Include="cPublicMethondExcel.cs" />
+    <Compile Include="FormExplorSheet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExplorSheet.Designer.cs">
+      <DependentUpon>FormExplorSheet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIP.Designer.cs">
+      <DependentUpon>FormIP.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormWeb.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormWeb.Designer.cs">
       <DependentUpon>FormWeb.cs</DependentUpon>
     </Compile>
+    <Compile Include="IEProfile.cs" />
+    <Compile Include="IEProxy.cs" />
+    <Compile Include="NewProfileDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewProfileDialog.Designer.cs">
+      <DependentUpon>NewProfileDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NICProfile.cs" />
+    <Compile Include="Profile.cs" />
+    <Compile Include="ProfileManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WMIHelper.cs" />
+    <EmbeddedResource Include="ApplySettingDialog.resx">
+      <DependentUpon>ApplySettingDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExplorSheet.resx">
+      <DependentUpon>FormExplorSheet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIP.resx">
+      <DependentUpon>FormIP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormWeb.resx">
       <DependentUpon>FormWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewProfileDialog.resx">
+      <DependentUpon>NewProfileDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
